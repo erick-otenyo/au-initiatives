@@ -31,7 +31,7 @@ class ProjectComponent extends Component {
           }
         });
         console.log(query);
-        const carto = `https://erick-otenyo.carto.com/api/v2/sql?q=SELECT*from africa_adm0 WHERE (name='Senegal' OR name='Kenya')&format=geojson`;
+        const carto = `https://erick-otenyo.carto.com/api/v2/sql?q=SELECT*from africa_countries WHERE (${query})&format=geojson`;
         console.log(carto);
         fetch(carto)
           .then(function(response) {
@@ -144,7 +144,7 @@ class ProjectComponent extends Component {
                     containerStyle={mapStyle}
                     fitBounds={bounds ? bounds : [[0, 0], [0, 0]]}
                     fitBoundsOptions={{
-                      padding: 50
+                      padding: 30
                     }}
                     // center={project.coordinates}
                   >

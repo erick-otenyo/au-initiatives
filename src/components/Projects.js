@@ -232,7 +232,7 @@ const Projects = [
         "Seychelles",
         "Botswana",
         "Burundi",
-        "Côte d'Ivoire",
+        "Côte dIvoire",
         "Djibouti",
         "Egypt",
         "Eritrea",
