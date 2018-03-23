@@ -1,0 +1,23 @@
+{
+  "name": "au-initiatives",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@turf/bbox": "^6.0.0",
+    "geojson-extent": "^0.3.2",
+    "mapbox-gl": "^0.44.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-mapbox-gl": "^3.8.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-text-truncate": "^0.12.1",
+    "semantic-ui-react": "^0.79.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
