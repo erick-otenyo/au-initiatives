@@ -13,7 +13,8 @@ const TopBar = () => {
         boxShadow: "none",
         borderRadius: 0,
         borderLeft: "none",
-        borderRight: "none"
+        borderRight: "none",
+        backgroundColor: "#efefef"
       }}
     >
       <Container fluid>

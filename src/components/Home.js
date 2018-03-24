@@ -17,7 +17,7 @@ const Home = () => {
                   to={`${process.env.PUBLIC_URL}/${project.id}`}
                   key={project.title}
                 >
-                  <Card link raised style={{ margin: "20px" }}>
+                  <Card link raised style={{ margin: "20px" }} color="red">
                     <Card.Content>
                       <Card.Header>{project.title}</Card.Header>
                     </Card.Content>

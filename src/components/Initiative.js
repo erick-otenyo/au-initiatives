@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import { Container, Header, Grid, Button, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { Layer, Feature, ZoomControl, GeoJSONLayer } from "react-mapbox-gl";
+import {
+  Layer,
+  Feature,
+  ZoomControl,
+  GeoJSONLayer,
+  Popup
+} from "react-mapbox-gl";
 import geojsonExtent from "@turf/bbox";
 import { Map, mapStyle, style } from "./Map";
 import Projects from "./Projects";
@@ -9,7 +15,7 @@ import Projects from "./Projects";
 class ProjectComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { selected: null };
   }
   componentDidMount() {
     const me = this;
@@ -57,15 +63,21 @@ class ProjectComponent extends Component {
             type: "Feature",
             geometry: {
               type: "Point",
-              coordinates: pt
+              coordinates: pt.coordinates
             }
           });
         });
-        const bounds = geojsonExtent(geojsonP);
+        let bounds;
+        if (geojsonP.features.length <= 1) {
+          bounds = [[-25.3604, -46.9658], [51.417, 37.3452]];
+        } else {
+          const extent = geojsonExtent(geojsonP);
+          bounds = [[extent[0], extent[1]], [extent[2], extent[3]]];
+        }
         me.setState({
           project_id: project_id,
           project: project,
-          bounds: [[bounds[0], bounds[1]], [bounds[2], bounds[3]]]
+          bounds: bounds
         });
       } else {
         me.setState({
@@ -75,9 +87,21 @@ class ProjectComponent extends Component {
       }
     }
   }
+  onMapClick = (map, e) => {
+    //hide popup on clicking outside
+    if (this.state.selected) {
+      this.setState({ selected: null });
+    }
+  };
+  handleFeatureClick = feature => {
+    this.setState({ selected: feature });
+  };
+  onToggleHover(cursor, { map }) {
+    //show or hide pointer cursor when hovering a feature on map
+    map.getCanvas().style.cursor = cursor;
+  }
   render() {
-    const { project_id, project, geojson, bounds } = this.state;
-    console.log(bounds);
+    const { project_id, project, geojson, bounds, selected } = this.state;
     let features;
     if (project) {
       // layer for points
@@ -93,7 +117,12 @@ class ProjectComponent extends Component {
             }}
           >
             {project.geom.list.map(feature => (
-              <Feature coordinates={feature} />
+              <Feature
+                coordinates={feature.coordinates}
+                onClick={this.handleFeatureClick.bind(this, feature)}
+                onMouseEnter={this.onToggleHover.bind(this, "pointer")}
+                onMouseLeave={this.onToggleHover.bind(this, "")}
+              />
             ))}
           </Layer>
         );
@@ -135,6 +164,12 @@ class ProjectComponent extends Component {
                     })}
                   </ul>
                 </div>
+                <Link to={`${process.env.PUBLIC_URL}/`}>
+                  <Button basic icon>
+                    <Icon name="chevron left" />
+                    Back to Initiatives
+                  </Button>
+                </Link>
               </Grid.Column>
               <Grid.Column width={8}>
                 {/* <Header>Project Map here</Header> */}
@@ -142,15 +177,43 @@ class ProjectComponent extends Component {
                   <Map
                     style={style}
                     containerStyle={mapStyle}
-                    fitBounds={bounds ? bounds : [[0, 0], [0, 0]]}
+                    onClick={this.onMapClick.bind(this)}
+                    fitBounds={
+                      bounds
+                        ? bounds
+                        : [[-25.3604, -46.9658], [51.417, 37.3452]]
+                    }
                     fitBoundsOptions={{
                       padding: 30
                     }}
                     // center={project.coordinates}
                   >
                     <ZoomControl position="bottom-right" />
+                    {project.geom &&
+                      project.geom.type === "all" && (
+                        <GeoJSONLayer
+                          data="https://erick-otenyo.carto.com/api/v2/sql?q=SELECT * from africa_countries&format=geojson"
+                          fillPaint={{
+                            "fill-color": "red",
+                            "fill-outline-color": "#000",
+                            "fill-opacity": 0.4
+                          }}
+                        />
+                      )}
 
                     {features}
+                    {selected && (
+                      <Popup
+                        coordinates={selected.coordinates}
+                        offset={{
+                          "bottom-left": [12, -38],
+                          bottom: [0, -10],
+                          "bottom-right": [-12, -38]
+                        }}
+                      >
+                        <h3>{selected.name}</h3>
+                      </Popup>
+                    )}
                   </Map>
                 </div>
               </Grid.Column>

@@ -9,7 +9,7 @@ const Projects = [
     id: "kigali-initiative-2017",
     geom: {
       type: "point",
-      list: [[30.102827, -1.969552]]
+      list: [{ coordinates: [30.102827, -1.969552], name: "Kigali" }]
     }
   },
   {
@@ -161,22 +161,46 @@ const Projects = [
     geom: {
       type: "point",
       list: [
-        [36.816219, -1.278674],
-        [38.759084, 9.046827],
-        [3.397245, 6.51939],
-        [3.908008, 7.449059],
-        [4.528556, 7.516341],
-        [-0.196132, 5.651251],
-        [32.570951, 0.32936],
-        [18.461285, -33.957652],
-        [30.980802, -29.867515],
-        [28.200829, -25.732865],
-        [26.516472, -33.313432],
-        [18.62713, -33.879342],
-        [28.030619, -26.190306],
-        [29.73695 - 2.605576],
-        [-17.464093, 14.690326],
-        [39.205477, -6.777743]
+        { coordinates: [36.816219, -1.278674], name: "University of Nairobi" },
+        { coordinates: [38.759084, 9.046827], name: "Addis Ababa University" },
+        { coordinates: [3.397245, 6.51939], name: "University of Lagos" },
+        { coordinates: [3.908008, 7.449059], name: "University of Ibadan" },
+        {
+          coordinates: [4.528556, 7.516341],
+          name: "Obafemi Awolowo University lle-Ife"
+        },
+        { coordinates: [-0.196132, 5.651251], name: "University of Ghana" },
+        { coordinates: [32.570951, 0.32936], name: "Makerere University" },
+        {
+          coordinates: [18.461285, -33.957652],
+          name: "University of Cape Town"
+        },
+        {
+          coordinates: [30.980802, -29.867515],
+          name: "University of Kwa-Zulu Natal"
+        },
+        {
+          coordinates: [28.200829, -25.732865],
+          name: "University of Pretoria"
+        },
+        { coordinates: [26.516472, -33.313432], name: "Rhodes University" },
+        {
+          coordinates: [18.62713, -33.879342],
+          name: "University of Stellenbosch"
+        },
+        {
+          coordinates: [28.030619, -26.190306],
+          name: "University of the Witwatersrand"
+        },
+        { coordinates: [29.73695 - 2.605576], name: "University of Rwanda" },
+        {
+          coordinates: [-17.464093, 14.690326],
+          name: "University Cheikh Anta Diop"
+        },
+        {
+          coordinates: [39.205477, -6.777743],
+          name: "University of Dar es Salaam"
+        }
       ]
     }
   },
@@ -352,61 +376,88 @@ const Projects = [
     objective: [
       "Purpose of the MESA programme is to increase the capacity in information management, decision-making and planning of African continental, regional and national institutions mandated for environment, climate, and food security."
     ],
-    id: "monitoring-for-environment-and-security-in-africa"
+    id: "monitoring-for-environment-and-security-in-africa",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: " Multilateral Environmental Agreements Program (MEAs)",
     objective: [
       "To strengthen and enhance the endogenous capacity of African ACP countries to effectively implement MEAs (both regional and continental) and related commitments, leading to sound management of the environment and natural resources and therefore to sustainable development and poverty eradication in Africa"
     ],
-    id: "multilateral-environmental-agreements-program"
+    id: "multilateral-environmental-agreements-program",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "Biodiversity",
     objective: [
       "To integrate biodiversity issues in African Union Commission policies, strategies and programs."
     ],
-    id: "biodiversity"
+    id: "biodiversity",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "The Inter-African Bureau for Animal Resources - IBAR",
     objective: [
       "Provides leadership in the development of animal resources for Africa."
     ],
-    id: "the-inter-african-bureau-for-animal-resources"
+    id: "the-inter-african-bureau-for-animal-resources",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "The Partnership for Aflatoxin Control in Africa - PACA",
     objective: [
       "Is a collaboration which aims to protect crops, livestock, and people from the effects of aflatoxins. By combating these toxins, PACA will contribute to improving food security, health, and trade across the African continent"
     ],
-    id: "the-partnership-for-aflatoxin-control-in-africa"
+    id: "the-partnership-for-aflatoxin-control-in-africa",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "Directorate of Women, Gender and Development",
     objective: ["Promotes gender equality in Africa and within the AU."],
-    id: "directorate-of-women-gender-and-development"
+    id: "directorate-of-women-gender-and-development",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "The Continental Tvet Strategy",
     objective: [
       "The TVET continental strategy provides a comprehensive framework for the design and development of national policies and strategies to address the challenges of education and technical and vocational training to support economic development, creation of national wealth and contribute to poverty reduction through youth entrepreneurship, innovation and employment."
     ],
-    id: "the-continental-tvet-strategy"
+    id: "the-continental-tvet-strategy",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "African Space Policy and Strategy",
     objective: [
       "African Union’s Space Policy and Strategy sets out the continent’s objectives in driving an ambitious space programme that can help tackle its most pressing development priorities, while becoming a global space player. "
     ],
-    id: "african-space-policy-and-strategy"
+    id: "african-space-policy-and-strategy",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "African Passport and free movement of people",
     objective: [
       "The passports represent a key plank of the Agenda 2063 action plan, which emphasizes the need for greater continental integration, drawing on the popular vision of Pan-African unity."
     ],
-    id: "african-passport-and-free-movement-of-people"
+    id: "african-passport-and-free-movement-of-people",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "Single African Air Transport Market (SAATM)",
@@ -415,7 +466,35 @@ const Projects = [
       "The initiative has 23 signatories",
       "There are 32 AU members still to come on board Benin, Burkina Faso, Botswana, Cabo Verde, Republic of Congo, Côte d’Ivoire, Egypt, Ethiopia, Gabon, Ghana,Guinea, Kenya, Liberia, Mali, Mozambique, Niger, Nigeria, Rwanda, Sierra Leone, South Africa,Swaziland, Togo and Zimbabwe"
     ],
-    id: "single-african-air-transport-market"
+    id: "single-african-air-transport-market",
+    geom: {
+      type: "countries",
+      list: [
+        "Benin",
+        "Burkina Faso",
+        "Botswana",
+        "Cape Verde",
+        "Republic of Congo",
+        "Côte dIvoire",
+        "Egypt",
+        "Ethiopia",
+        "Gabon",
+        "Ghana",
+        "Guinea",
+        "Kenya",
+        "Liberia",
+        "Mali",
+        "Mozambique",
+        "Niger",
+        "Nigeria",
+        "Rwanda",
+        "Sierra Leone",
+        "South Africa",
+        "Swaziland",
+        "Togo",
+        "Zimbabwe"
+      ]
+    }
   },
   {
     title:
@@ -423,12 +502,18 @@ const Projects = [
     objective: [
       "Enhancing synergy between the African Governance Architecture (AGA) and the African Peace and Security Architecture (APSA). "
     ],
-    id: "strengthening-the-peace-and-governance-nexus-within-the-african-union"
+    id: "strengthening-the-peace-and-governance-nexus-within-the-african-union",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "African Union Mission in Somalia (AMISOM)",
     objective: ["Somali"],
-    id: "african-union-mission-in-somalia"
+    id: "african-union-mission-in-somalia",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "Peace and security",
@@ -444,14 +529,20 @@ const Projects = [
       "African Peace and Security Architecture (APSA), the Peace and Security Department (PSD )",
       "Aims at developing  effective strategies for gender mainstreaming into  Peace and Security"
     ],
-    id: "peace-and-security"
+    id: "peace-and-security",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "African Charter on Democracy, Elections and Governance",
     objective: [
       "This charter highlights the commitment by member states to the universal values and principles of democracy, good governance, human rights and the right to development. It is intended to provide member states with a reference point to measure reform and to improve governance processes"
     ],
-    id: "african-charter-on-democracy-elections-and-governance"
+    id: "african-charter-on-democracy-elections-and-governance",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "Minimum Integration Programme-MIP",
@@ -466,14 +557,20 @@ const Projects = [
       "Progressive elimination of tariff barriers (TB) in all the RECs;",
       "Infrastructural development in Africa"
     ],
-    id: "minimum-integration-programme"
+    id: "minimum-integration-programme",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "Common African Position on Humanitarian Effectiveness (CAP)",
     objective: [
       "The AU initiated annual symposium in 2013 as a platform to bring together policy makers and practitioners from Member States and Regional Economic Communities (RECs), regional and international humanitarian organizations, humanitarian workers, Think Tanks, Civil Society, youth, representatives of displaced populations, the Diaspora, Innovators, Social and the Private Sector and the wider global humanitarian community, to dialogue on how to better deliver humanitarian response in Africa."
     ],
-    id: "position-on-humanitarian-effectiveness"
+    id: "position-on-humanitarian-effectiveness",
+    geom: {
+      type: "all"
+    }
   },
   {
     title:
@@ -483,7 +580,10 @@ const Projects = [
       "Africa is host to over 3.5 million refugees and 15.6million internally displaced persons.",
       "Aspiration 3 of Agenda 2063 for Africa’s Transformation seeks to instill a universal culture of good governance, democratic values, gender equality, respect for human rights, justice and the rule of law;"
     ],
-    id: "african-union-convention-on-preventing-and-combating-corruption"
+    id: "african-union-convention-on-preventing-and-combating-corruption",
+    geom: {
+      type: "all"
+    }
   },
   {
     title:
@@ -493,28 +593,40 @@ const Projects = [
       "As at 2015, 41 African Union Member States have signed CAADP compacts, 33 of which have developed formal national agriculture and food security investment plans Framework that has inspired and energised African agricultural research institutions, farmers’ associations, African governments and the private sector FOR  development",
       "Boosting investment to stimulate growth in the agricultural sector– at the continental, regional and national levels – to increase investment, improve coordination, share knowledge, successes and failures, encourage one another and to promote joint and separate efforts."
     ],
-    id: "the-comprehensive-africa-agriculture-development-programme"
+    id: "the-comprehensive-africa-agriculture-development-programme",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "The African Union Commodity Strategy",
     objective: [
       "High-priority commodities sectors in Africa agriculture, mining, and energy."
     ],
-    id: "the-african-union-commodity-strategy"
+    id: "the-african-union-commodity-strategy",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "African Geology and Mineral  Information Systems",
     objective: [
       "Concerned with mineral extraction. sets out how mining can be used to drive continental development"
     ],
-    id: "african-geology-and-mineral-information-systems"
+    id: "african-geology-and-mineral-information-systems",
+    geom: {
+      type: "all"
+    }
   },
   {
     title: "Accelerated Industrial Plan for Africa (AIDA)",
     objective: [
       "Collaboration with the United Nations Industrial Development Organization (UNIDO), the United Nations Economic Commission for Africa (UNECA) and other development partners."
     ],
-    id: "accelerated-industrial-plan-for-africa"
+    id: "accelerated-industrial-plan-for-africa",
+    geom: {
+      type: "all"
+    }
   }
 ];
 
